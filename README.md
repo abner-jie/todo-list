@@ -1,17 +1,21 @@
 # Todo List Monorepo
 
 This is a monorepo project using pnpm workspaces, containing:
-- Frontend (React + TypeScript)
-- Backend (Express + TypeScript)
-- Shared TypeScript types
+- Frontend (React + Vite)
+- Backend (Node.js + Koa)
+- Shared UI Components
+- Shared Utilities
 
 ## Project Structure
 
 ```
-packages/
-  ├── fe/           # Frontend React application
-  ├── server/       # Backend Express server
-  └── shared/       # Shared TypeScript types
+.
+├── apps/
+│   ├── frontend/     # React + Vite frontend application
+│   └── backend/      # Koa backend application
+└── packages/
+    ├── ui/          # Shared UI components
+    └── utils/       # Shared utility functions
 ```
 
 ## Getting Started
@@ -25,13 +29,13 @@ pnpm install
 
 Frontend:
 ```bash
-cd packages/fe
+cd apps/frontend
 pnpm dev
 ```
 
 Backend:
 ```bash
-cd packages/server
+cd apps/backend
 pnpm dev
 ```
 
@@ -42,12 +46,20 @@ To build all packages:
 pnpm -r build
 ```
 
-## Shared Types
+## Shared Packages
 
-The `shared` package contains TypeScript types that are used by both frontend and backend. To use these types in your code:
+### UI Components
+The `@todo-list/ui` package contains shared React components that can be used across the frontend application.
 
-```typescript
-import { Todo, CreateTodoDto } from '@todo-list/shared';
-```
+### Utilities
+The `@todo-list/utils` package contains shared utility functions that can be used across both frontend and backend applications.
+
+## Development
+
+- Frontend: React + Vite + TypeScript
+- Backend: Koa + TypeScript
+- Database: MySQL
+- Package Manager: pnpm
+- Monorepo Management: pnpm workspaces
 
 
